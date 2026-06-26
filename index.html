@@ -2,63 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>TUKO Updated Dad-First Kickstarter Wireframe</title>
+<title>TUKO Simplified Video-Led Wireframe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-:root { --bg:#f7f7f3; --ink:#1f201e; --muted:#585852; --line:#cdcdc4; --soft:#ebebe4; --accent:#37453f; --accent2:#746349; --accentLight:#e2e8e2; --tan:#ede8de; --white:#fff; }
+:root {
+  --bg:#f8f8f4; --ink:#1f211f; --muted:#585852; --line:#cdcdc3; --soft:#ebebe4;
+  --accent:#394a43; --accentLight:#e2e8e2; --warm:#ede8dc; --white:#fff;
+}
 * { box-sizing:border-box; }
 body { margin:0; font-family:Inter, Arial, sans-serif; background:var(--bg); color:var(--ink); }
-.page { max-width:1220px; margin:0 auto; padding:32px 24px 80px; }
+.page { max-width:1180px; margin:0 auto; padding:32px 24px 80px; }
 .nav, section { background:var(--white); border:1.5px solid var(--line); border-radius:24px; }
 .nav { display:flex; align-items:center; gap:28px; padding:18px 26px; position:sticky; top:16px; z-index:10; box-shadow:0 8px 28px rgba(0,0,0,.04); }
-.logo { font-weight:900; font-size:24px; }
-.nav .muted { color:var(--muted); flex:1; }
-.navlinks { display:flex; gap:22px; color:var(--muted); font-size:14px; }
-.btn { background:var(--accent); color:#fff; border-radius:14px; padding:15px 22px; display:inline-block; font-weight:800; text-decoration:none; }
-.input { background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:17px 18px; color:var(--muted); min-width:280px; display:inline-block; }
+.logo { font-size:24px; font-weight:900; }
+.nav .muted { flex:1; color:var(--muted); }
+.navlinks { display:flex; gap:20px; font-size:14px; color:var(--muted); }
+.btn { background:var(--accent); color:white; text-decoration:none; border-radius:14px; padding:15px 22px; display:inline-block; font-weight:800; }
+.input { background:white; border:1.5px solid var(--line); border-radius:14px; padding:17px 18px; color:var(--muted); min-width:280px; display:inline-block; }
 section { margin-top:28px; padding:48px 44px; }
-.hero { display:grid; grid-template-columns:1.05fr .95fr; gap:56px; padding:62px 56px; }
-.eyebrow { color:var(--accent); font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:900; }
+.hero { display:grid; grid-template-columns:1fr 1fr; gap:54px; padding:62px 56px; }
+.eyebrow { color:var(--accent); font-size:13px; text-transform:uppercase; letter-spacing:.08em; font-weight:900; }
 h1 { font-size:52px; line-height:1.06; margin:16px 0 22px; }
 h2 { font-size:34px; line-height:1.15; margin:12px 0; }
-h3 { font-size:20px; margin:0 0 10px; }
+h3 { font-size:21px; margin:0 0 10px; }
 p { color:var(--muted); font-size:17px; line-height:1.55; }
 .form { display:flex; gap:12px; flex-wrap:wrap; margin:28px 0 14px; }
-.placeholder { min-height:330px; background:repeating-linear-gradient(135deg,var(--soft),var(--soft) 18px,#deded8 20px); border:1.5px solid var(--line); border-radius:20px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted); font-weight:800; }
-.chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-.chip { background:var(--accentLight); color:var(--accent); border-radius:999px; padding:10px 14px; font-size:13px; font-weight:800; display:inline-block; }
-.inspo, .strategy { border:0; }
-.inspo { background:var(--tan); }
-.refs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:26px; }
-.ref { background:white; color:inherit; text-decoration:none; border:1px solid #d9d2c6; border-radius:16px; padding:16px; min-height:92px; display:block; }
-.ref strong { display:block; font-size:15px; margin-bottom:8px; }
-.ref span { display:block; color:var(--muted); font-size:13px; line-height:1.45; }
-.strategy { background:var(--accentLight); }
-.section-head { max-width:920px; margin-bottom:28px; }
-.grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
-.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-.card { border:1.5px solid var(--line); border-radius:18px; padding:24px; background:white; min-height:170px; }
-.num { width:40px; height:40px; border-radius:50%; background:var(--accentLight); color:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:900; margin-bottom:16px; }
-.note { background:var(--tan); border-radius:18px; padding:20px 24px; margin-top:22px; }
-.note strong { color:var(--accent2); font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
-.use .placeholder { min-height:130px; margin-bottom:20px; }
-.step .placeholder { min-height:170px; margin-bottom:22px; }
-.feature-map { display:grid; grid-template-columns:1fr 1.35fr 1fr; gap:18px; align-items:center; min-height:460px; }
-.callout { background:var(--accentLight); color:var(--accent); border-radius:16px; padding:18px; font-weight:900; margin:18px 0; }
-.product { min-height:360px; }
-.sku .placeholder { min-height:180px; margin-bottom:20px; }
-.timeline { padding:44px 22px 10px; }
-.timeline-line { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; position:relative; }
-.timeline-line:before { content:""; position:absolute; left:8%; right:8%; top:20px; height:3px; background:var(--line); }
-.milestone { position:relative; text-align:center; color:var(--muted); font-size:14px; }
-.dot { width:40px; height:40px; margin:0 auto 14px; border-radius:50%; background:var(--accentLight); border:2px solid var(--accent); color:var(--accent); display:flex; justify-content:center; align-items:center; font-weight:900; position:relative; z-index:2; }
-.final { background:var(--accent); color:white; display:grid; grid-template-columns:1fr .8fr; gap:48px; border:0; }
+.placeholder { min-height:330px; background:repeating-linear-gradient(135deg,var(--soft),var(--soft) 18px,#deded8 20px); border:1.5px solid var(--line); border-radius:22px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted); font-weight:900; position:relative; }
+.placeholder.video:before { content:"▶"; width:84px; height:84px; background:white; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:34px; margin-right:16px; }
+.chips { background:var(--accentLight); color:var(--accent); border-radius:18px; padding:18px 22px; margin-top:18px; font-weight:700; }
+.goal { background:var(--accentLight); border:0; display:flex; justify-content:space-between; gap:24px; align-items:center; }
+.inspo { background:var(--warm); border:0; }
+.refs { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:24px; }
+.ref { background:white; border:1px solid #d9d2c6; border-radius:16px; padding:18px; }
+.ref p { font-size:14px; margin-bottom:0; }
+.flow { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.flow .item, .tile, .spotlight, .trust { border:1.5px solid var(--line); border-radius:20px; background:white; padding:24px; }
+.flow .num { width:42px; height:42px; border-radius:50%; background:var(--accentLight); color:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:900; margin-bottom:16px; }
+.tiles { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.tile .placeholder { min-height:230px; margin-bottom:22px; }
+.spotlight { display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center; }
+.spotlight .placeholder { min-height:400px; }
+.bullets div { margin:18px 0; font-weight:700; }
+.trust { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+.timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; text-align:center; margin-top:45px; position:relative; }
+.timeline:before { content:""; position:absolute; left:8%; right:8%; top:22px; height:3px; background:var(--line); }
+.dot { width:44px; height:44px; background:var(--accentLight); border:2px solid var(--accent); color:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; margin:0 auto 14px; position:relative; z-index:2; }
+.final { background:var(--accent); color:white; border:0; display:grid; grid-template-columns:1fr .8fr; gap:44px; }
 .final p { color:#eeeeea; }
-.final .asset { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); border-radius:20px; padding:28px; }
-.summary { margin-top:28px; }
-@media (max-width:880px) {
-  .hero,.grid2,.grid3,.grid4,.refs,.final,.feature-map { grid-template-columns:1fr; }
+.final .changed { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.24); border-radius:20px; padding:28px; }
+@media(max-width:880px) {
+  .hero,.refs,.flow,.tiles,.spotlight,.trust,.final { grid-template-columns:1fr; }
   .navlinks { display:none; }
   h1 { font-size:36px; }
 }
@@ -66,112 +59,103 @@ p { color:var(--muted); font-size:17px; line-height:1.55; }
 </head>
 <body>
 <main class="page">
-  <div class="nav"><div class="logo">TUKO</div><div class="muted">Updated Dad-First Kickstarter Waitlist Wireframe</div><div class="navlinks"><span>Inspiration</span><span>Layout</span><span>CTA Flow</span></div><a class="btn" href="#waitlist">Join Dad Waitlist</a></div>
+  <div class="nav"><div class="logo">TUKO</div><div class="muted">Simplified Video-Led Kickstarter Waitlist Wireframe</div><div class="navlinks"><span>Hero Video</span><span>Explainers</span><span>Waitlist</span></div><a class="btn" href="#waitlist">Join Waitlist</a></div>
 
   <section class="hero">
     <div>
-      <div class="eyebrow">Dad-first Kickstarter lander</div>
+      <div class="eyebrow">Video-led dad-first lander</div>
       <h1>A baby carrier built for hands-on dads.</h1>
-      <p>For dads who want to carry confidently, move freely, and stay hands-free through errands, walks, travel, and everyday family life.</p>
+      <p>Simple to wear, comfortable to carry, and made for everyday dad moments — from errands to walks to travel days.</p>
       <div class="form"><span class="input">Enter email address</span><a class="btn">Join the Dad Waitlist</a></div>
-      <p>Goal: collect 1,000+ pre-Kickstarter signups and reuse the same assets for the Kickstarter page.</p>
+      <p>Primary goal: collect 1,000+ email signups before launching on Kickstarter.</p>
     </div>
     <div>
-      <div class="placeholder">Hero dad lifestyle visual<br><small>Dad wearing TUK carrier outdoors / travel / errands</small></div>
-      <div class="chips"><span class="chip">Dad-ready fit</span><span class="chip">Hands-free carry</span><span class="chip">Built-in sun shade</span></div>
+      <div class="placeholder video">Hero video<br><small>Primary demo / lifestyle video near the top</small></div>
+      <div class="chips">Use existing hero video as the main education asset, not just a decorative visual.</div>
     </div>
+  </section>
+
+  <section class="goal">
+    <h2>Cleaned-up structure: fewer cards, more video-led hierarchy.</h2>
+    <div><div class="eyebrow">Waitlist target</div><h3>1,000+ signups</h3></div>
   </section>
 
   <section class="inspo">
-    <div class="eyebrow">Inspiration pages to use as reference</div>
-    <h2>Use these as layout and messaging references — not direct design copies.</h2>
-    <div class="refs"><a class="ref" href="https://tacticalbabygear.com/products/tactical-baby-carrier" target="_blank"><strong>Tactical Baby Gear</strong><span>Dad-first carrier positioning and utility-led product copy.</span></a>
-<a class="ref" href="https://www.amazon.com/stores/MissionCritical/page/9DA1D1BA-8461-49C2-9EF2-B906AC20BA31" target="_blank"><strong>Mission Critical</strong><span>Dad/tactical carrier reference with confidence-led tone.</span></a>
-<a class="ref" href="https://shop.lalabu.com/" target="_blank"><strong>Lalabu</strong><span>Simple hands-free babywearing and quick-use messaging.</span></a>
-<a class="ref" href="https://www.kickstarter.com/projects/snug-baby-carriers/snug-the-fail-safe-baby-carrier" target="_blank"><strong>SNUG Baby Carrier</strong><span>Kickstarter product demo and no-fumble education.</span></a>
-<a class="ref" href="https://www.bebeswan-babycarrier.com/" target="_blank"><strong>bebeswan Eternity</strong><span>Pre-order/waitlist style product education.</span></a>
-<a class="ref" href="https://www.kickstarter.com/projects/254434671/carry-your-kid-stash-your-stuff-save-your-back" target="_blank"><strong>TushBaby</strong><span>Clear pain-point copy around carrying, storage, and back relief.</span></a></div>
+    <div class="eyebrow">Reference callout</div>
+    <h2>Borrow the module, not the brand direction.</h2>
+    <p>Instead of sending full tactical brand pages, show screenshots of the exact portions we want to learn from.</p>
+    <div class="refs"><div class="ref"><strong>Tactical Baby Gear</strong><p>Video explainer tiles only: easy setup, adjustments, sunshade. Not a brand/style direction.</p></div><div class="ref"><strong>Lalabu</strong><p>Clean page flow and simple hands-free messaging.</p></div><div class="ref"><strong>SNUG</strong><p>Quick demo / no-fumble product education.</p></div><div class="ref"><strong>Nimbel / bebeswan</strong><p>Clean product feature education and trust-building structure.</p></div></div>
   </section>
 
-  <section class="strategy">
-    <div class="eyebrow">Page strategy</div>
-    <h2>Make it a waitlist lander first, not a full ecommerce PDP.</h2>
-    <p>The page should validate demand, explain the dad-specific angle, capture emails repeatedly, and create reusable Kickstarter assets.</p>
-  </section>
-
-  <section><div class="section-head"><div class="eyebrow">Section 01</div><h2>Dad carry should feel natural, not complicated.</h2><p>Open with dad-specific pain points so the positioning feels intentional right away.</p></div>
-    <div class="grid3">
-      <div class="card"><div class="num">1</div><h3>Not built for dad bodies</h3><p>Many carriers do not feel designed for broader shoulders, longer torsos, or fast fit adjustments.</p></div>
-      <div class="card"><div class="num">2</div><h3>Too much setup</h3><p>Dads need a simple carrier experience, not a confusing strap puzzle during busy moments.</p></div>
-      <div class="card"><div class="num">3</div><h3>Hands are never free</h3><p>Errands, airport days, weekend plans, and coffee runs are easier when carrying feels secure.</p></div>
-    </div>
-    <div class="note"><strong>Reference logic</strong><p>Inspired by Tactical Baby Gear + Mission Critical: make dads feel like this product was intentionally built for them.</p></div>
-  </section>
-
-  <section><div class="section-head"><div class="eyebrow">Section 02</div><h2>Made for everyday dad mode.</h2><p>Show specific lifestyle use cases so the client knows what assets to shoot.</p></div>
-    <div class="grid4">
-      <div class="card use"><div class="placeholder">Morning walks visual</div><h3>Morning walks</h3><p>Neighborhood walks, coffee runs, and outdoor routines.</p></div>
-      <div class="card use"><div class="placeholder">Errands visual</div><h3>Errands + groceries</h3><p>Hands-free carrying while juggling bags, keys, and baby gear.</p></div>
-      <div class="card use"><div class="placeholder">Travel visual</div><h3>Travel days</h3><p>Airports, road trips, family outings, and stroller-free moments.</p></div>
-      <div class="card use"><div class="placeholder">Weekend visual</div><h3>Weekend adventures</h3><p>Parks, events, sunny days, and everyday exploring.</p></div>
+  <section>
+    <div class="eyebrow">Page layout idea</div>
+    <h2>Simplified wireframe flow</h2>
+    <p>A shorter, more visual page that leads with the hero video and repeats the waitlist CTA only where it matters.</p>
+    <div class="flow">
+      <div class="item"><div class="num">01</div><h3>Hero + waitlist CTA + hero video</h3><p>Lead with the strongest demo asset immediately.</p></div>
+      <div class="item"><div class="num">02</div><h3>Short value proposition</h3><p>One compact section explaining who it’s for and why dads care.</p></div>
+      <div class="item"><div class="num">03</div><h3>Three video explainer tiles</h3><p>Easy setup, easy adjustments, sunshade.</p></div>
+      <div class="item"><div class="num">04</div><h3>Product feature spotlight</h3><p>One strong visual with key callouts, not several repeating cards.</p></div>
+      <div class="item"><div class="num">05</div><h3>Safety/testing + timeline</h3><p>Build trust and explain the 1,000 signup milestone.</p></div>
+      <div class="item"><div class="num">06</div><h3>Final waitlist CTA</h3><p>Close with early access / Kickstarter reminder.</p></div>
     </div>
   </section>
 
-  <section><div class="section-head"><div class="eyebrow">Section 03</div><h2>Designed for dads who actually carry.</h2><p>Convert product features into dad-friendly benefits.</p></div>
-    <div class="grid4">
-      <div class="card"><h3>Dad-friendly fit</h3><p>Adjustable support for different dad builds and everyday comfort.</p></div>
-      <div class="card"><h3>Quick confidence</h3><p>Simple enough for first-time carrier users and busy parents.</p></div>
-      <div class="card"><h3>Less strain</h3><p>Support-focused structure for longer carries and daily movement.</p></div>
-      <div class="card"><h3>Shade on the go</h3><p>Built-in sun shade for walks, travel, and sunny day plans.</p></div>
+  <section>
+    <div class="eyebrow">Section 01</div>
+    <h2>Show, don’t over-explain.</h2>
+    <p>This replaces multiple repetitive benefit cards with three visual explainer modules.</p>
+    <div class="tiles">
+      <div class="tile"><div class="placeholder video">Easy setup</div><h3>Easy setup</h3><p>How fast dad can put it on.</p></div>
+      <div class="tile"><div class="placeholder video">Easy adjustments</div><h3>Easy adjustments</h3><p>How the fit changes on body.</p></div>
+      <div class="tile"><div class="placeholder video">Built-in sunshade</div><h3>Built-in sunshade</h3><p>How shade deploys outdoors.</p></div>
     </div>
   </section>
 
-  <section><div class="section-head"><div class="eyebrow">Section 04</div><h2>Put it on. Buckle in. Go dad mode.</h2><p>Use a simple 3-step demo flow inspired by Lalabu and SNUG.</p></div>
-    <div class="grid3">
-      <div class="card step"><div class="placeholder">Step 1 visual</div><h3>Put on the carrier</h3><p>Show a dad putting it on quickly without complicated wrapping.</p></div>
-      <div class="card step"><div class="placeholder">Step 2 visual</div><h3>Secure baby comfortably</h3><p>Show safe and supported positioning through a simple visual sequence.</p></div>
-      <div class="card step"><div class="placeholder">Step 3 visual</div><h3>Move hands-free</h3><p>Show dad using both hands while baby is secure.</p></div>
+  <section class="spotlight">
+    <div class="placeholder">Product / model visual<br><small>Dad wearing TUK carrier</small></div>
+    <div>
+      <div class="eyebrow">Section 02</div>
+      <h2>Built for everyday carry.</h2>
+      <p>Keep this section clean and scannable. The goal is to explain the product without making the page feel like a long PDP.</p>
+      <div class="bullets">
+        <div>• Dad-friendly fit and support</div>
+        <div>• Quick setup and adjustment</div>
+        <div>• Built-in sunshade for outdoor use</div>
+        <div>• Comfort-focused carry for baby and parent</div>
+      </div>
     </div>
   </section>
 
-  <section><div class="section-head"><div class="eyebrow">Section 05</div><h2>Feature callouts for Kickstarter reuse.</h2><p>This is the core product education block that can be reused almost directly on Kickstarter.</p></div>
-    <div class="feature-map">
-      <div><div class="callout">Fast-adjust fit</div><div class="callout">Shoulder support</div><div class="callout">Breathable comfort</div></div>
-      <div class="placeholder product">Main product visual<br><small>Front / back / detail shots on dad model</small></div>
-      <div><div class="callout">Built-in sun shade</div><div class="callout">Everyday storage</div><div class="callout">Secure baby support</div></div>
+  <section class="trust">
+    <div>
+      <div class="eyebrow">Section 03</div>
+      <h2>Trust + launch path.</h2>
+      <p>Use only confirmed safety/testing claims once available. This section should reassure without overpromising.</p>
+      <div class="chips">Safety claims pending client approval</div>
     </div>
-    <div class="note"><strong>Reference logic</strong><p>Inspired by Nimbel + bebeswan: use feature labels, ergonomic proof, comfort callouts, and short scannable explanations.</p></div>
-  </section>
-
-  <section><div class="section-head"><div class="eyebrow">Section 06</div><h2>Trusted for baby. Built for dad.</h2><p>Balance the dad positioning with safety and quality proof so it still feels credible for a baby product.</p></div>
-    <div class="grid4">
-      <div class="card"><h3>Safety testing</h3><p>Use confirmed testing claims only once approved.</p></div>
-      <div class="card"><h3>Factory/PVT progress</h3><p>Show where the product is in development and launch readiness.</p></div>
-      <div class="card"><h3>Comfort validation</h3><p>Add dad/baby fit testing or user feedback if available.</p></div>
-      <div class="card"><h3>Kickstarter readiness</h3><p>Explain why waitlist growth comes before campaign launch.</p></div>
+    <div>
+      <div class="timeline">
+        <div><div class="dot">1</div>Testing</div>
+        <div><div class="dot">2</div>1,000 signups</div>
+        <div><div class="dot">3</div>Kickstarter</div>
+        <div><div class="dot">4</div>Ecomm launch</div>
+      </div>
     </div>
-    <div class="note"><strong>Important note</strong><p>Avoid overclaiming safety/ergonomics until approved testing and compliance language is confirmed.</p></div>
-  </section>
-
-  <section><div class="section-head"><div class="eyebrow">Section 07</div><h2>Dad-ready colors for every carry.</h2><p>Preview variants without turning the lander into a full ecommerce page.</p></div>
-    <div class="grid2">
-      <div class="card sku"><div class="placeholder">Color preview</div><h3>TUKO-BC1-GRN</h3><p>Green variant / hero product</p><span class="chip">Coming soon on Kickstarter</span></div>
-      <div class="card sku"><div class="placeholder">Color preview</div><h3>TUKO-BC1-BLU</h3><p>Blue variant</p><span class="chip">Coming soon on Kickstarter</span></div>
-    </div>
-  </section>
-
-  <section><div class="section-head"><div class="eyebrow">Section 08</div><h2>Help us launch the dad carrier on Kickstarter.</h2><p>Make the 1,000-signup goal feel like a meaningful launch milestone.</p></div>
-    <div class="timeline"><div class="timeline-line">
-      <div class="milestone"><div class="dot">1</div>Dad-first positioning</div><div class="milestone"><div class="dot">2</div>Prototype/testing</div><div class="milestone"><div class="dot">3</div>Safety gates</div><div class="milestone"><div class="dot">4</div>1,000 dad signups</div><div class="milestone"><div class="dot">5</div>Kickstarter launch</div><div class="milestone"><div class="dot">6</div>Ecommerce target</div>
-    </div></div>
   </section>
 
   <section id="waitlist" class="final">
-    <div><div class="eyebrow">Final CTA</div><h2>Be one of the first dads to carry with TUKO.</h2><p>Join the dad waitlist for Kickstarter launch updates, early-bird access, and first product announcements.</p><div class="form"><span class="input">Enter email address</span><a class="btn">Join the Dad Waitlist</a></div></div>
-    <div class="asset"><h3>Asset reuse plan</h3><p>Hero video, dad lifestyle shots, feature callouts, safety/testing copy, color previews, and launch timeline can all be reused on Kickstarter.</p></div>
+    <div>
+      <div class="eyebrow">Final CTA</div>
+      <h2>Be one of the first dads to carry with TUKO.</h2>
+      <p>Join the waitlist for Kickstarter launch updates, early-bird access, and first product announcements.</p>
+      <div class="form"><span class="input">Enter email address</span><a class="btn">Join the Dad Waitlist</a></div>
+    </div>
+    <div class="changed">
+      <h3>What changed</h3>
+      <p>Less repetition, fewer cards, hero video moved up, and explainer modules become the main educational section.</p>
+    </div>
   </section>
-
-  <section class="summary"><div class="eyebrow">Presentation summary</div><p>This wireframe is a dad-first Kickstarter waitlist page, not a full ecommerce PDP. The goal is to validate demand, collect 1,000+ signups, and define reusable assets before the Kickstarter campaign build.</p></section>
 </main>
 </body>
 </html>
