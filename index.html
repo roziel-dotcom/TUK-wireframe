@@ -15,7 +15,23 @@ body { margin:0; font-family:Inter, Arial, sans-serif; background:var(--bg); col
 .page { max-width:1180px; margin:0 auto; padding:32px 24px 80px; }
 .nav, section { background:var(--white); border:1.5px solid var(--line); border-radius:24px; }
 .nav { display:flex; align-items:center; gap:24px; padding:18px 26px; position:sticky; top:16px; z-index:10; box-shadow:0 8px 28px rgba(0,0,0,.04); }
-.logo { font-size:25px; font-weight:900; letter-spacing:-.02em; }
+/* Logo image */
+.logo {
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  width:118px;
+  height:34px;
+  overflow:hidden;
+  text-decoration:none;
+}
+.logo img {
+  width:118px;
+  height:34px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
 .tagline { color:var(--accent); font-size:14px; max-width:330px; flex:1; }
 .navlinks { display:flex; gap:22px; font-size:14px; color:var(--muted); }
 .navlinks a { color:inherit; text-decoration:none; }
@@ -69,7 +85,9 @@ p { color:var(--muted); font-size:17px; line-height:1.55; }
 <body>
 <main class="page">
   <nav class="nav">
-    <div class="logo">TUKO</div>
+    <a class="logo" href="./" aria-label="TUKO home">
+      <img src="./Tuko_Logo.png" alt="TUKO">
+    </a>
     <div class="tagline">Carry confidently. Join the Kickstarter waitlist.</div>
     <div class="navlinks">
       <a href="#why">Why TUKO</a>
