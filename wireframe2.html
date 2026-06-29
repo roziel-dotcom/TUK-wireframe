@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>TUKO — Finally, a carrier designed for your body | Reserve your place in the founding run</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The first baby carrier engineered for dads. Patent-pending hip belt for the male frame, one-handed Fidlock buckles, one carrier 4–36 months. Reserve your place in the TUKO founding run. Designed in Scotland. #TUGETHER">
+
+<!--
+  TUKO — Pre-order / founding-run signups landing page (production build, context-first)
+  Built by Friday from friday-docs/brands/tuko/ (wiki + dossier.md) + the real March-2026 Grant Anderson shoot.
+  Funnel decision: Shopify pre-order / email-signups lander (capture now → flip traffic to Kickstarter at launch).
+  Direction (Amor, 2026-06-25): email-signup waitlist, one repeated CTA, 1,000-signup goal, WARM/NEUTRAL/FAMILY
+  visual register (never tactical) — Tactical Baby Gear is a MESSAGING reference only.
+
+  ASSET / HONESTY NOTES (load-bearing — verified by the 2026-06-27 sweep):
+  • PHOTOGRAPHY — REAL frames from the March-2026 "First Pass" shoot (Grant Anderson), optimised in assets/photos/web/.
+    Carry-facing QA (anatomical guardrail): hero/founder/spotlight/Emma all use FRONT-INWARD carries (full-day, hip-healthy).
+    The one FRONT-OUTWARD frame (olive, 290 — time-limited to 20-45 min) is used ONLY as a colour swatch, never under a
+    comfort/duration claim. Ben signs off all creative before launch.
+  • CLAIMS — Lead RTB is the canonical "patent-pending HIP BELT for the male pelvis" (per the Brand Canon — confirm exact
+    patent component wording with Ben; the booklet also names a "lumbar support section"). The sun hood / "all-weather" claim
+    is REMOVED: the sunshade textile breathability is the live launch blocker (dossier §5) — do not market it until resolved.
+    "Generous returns" softened to "a returns policy" (terms unconfirmed). "1,000 founding places" = the real signup gate.
+  • FONTS — Still TBC from Ben (the Master Creative Guideline explicitly defers fonts + hex). Archivo (heavy grotesk)
+    + Hanken Grotesk (clean sans) are STAND-INS evoking the described treatment — not the real brand fonts.
+  • COLOUR — Only Pantone Warm Red U is hard-spec'd (≈#E8472A). Greens/charcoal/sand are screen approximations of
+    the Canon's descriptive palette. Replace when the brand hex/CMYK sheet lands.
+  • LOGO — Only a black raster wordmark exists (no SVG / no white-on-dark). CSS-inverted for dark grounds.
+  • HERO VIDEO — Does NOT exist yet (was a wish, not an asset). Hero leads with real photography; a <video> can drop
+    into the hero later (assembled from Ben Ads Clips / the August shoot). Slot marked in the hero.
+  • PRICE / STANDARD — £220 RRP (was £199); CEN/TR 16512:2015 (sling; UK/EU only). Recycled-% withheld (HOLD).
+  • FORM — Pre-order email capture is a front-end demo. Wire to Klaviyo (founding-run list) before traffic.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#FAF6EE; --sand:#EFE7D6; --sand-soft:#F4EEE1;
+  --ink:#1E241F; --muted:#5C655C; --line:#E2DAC9; --line-strong:#D3C9B4;
+  --forest:#2C3A30; --forest-700:#223028; --forest-900:#161E18;
+  --olive:#5B5F3A; --warmred:#E8472A; --warmred-600:#CF3C20; --warmred-700:#B5341B; --warmred-100:#F7E5DC;
+  --white:#fff;
+  --maxw:1180px; --r:18px; --r-lg:26px;
+  --shadow:0 22px 60px -28px rgba(22,30,24,.5); --shadow-sm:0 12px 30px -18px rgba(22,30,24,.4);
+  --display:"Archivo","Archivo Black",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--body);background:var(--cream);color:var(--ink);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}.reveal{opacity:1!important;transform:none!important;}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+:where(a,button,summary,.btn,input):focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:8px;}
+section[id]{scroll-margin-top:86px;}
+img{max-width:100%;display:block;}
+
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;margin:0;line-height:1.05;letter-spacing:-.03em;color:var(--ink);}
+h1{font-size:clamp(2.6rem,5.6vw,4.4rem);letter-spacing:-.04em;}
+h2{font-size:clamp(1.95rem,3.8vw,2.95rem);letter-spacing:-.035em;}
+h3{font-size:1.3rem;letter-spacing:-.02em;}
+p{margin:0 0 1rem;color:var(--muted);}
+p.lead{font-size:clamp(1.06rem,1.5vw,1.28rem);color:var(--ink);opacity:.88;}
+strong{color:var(--ink);}
+.eyebrow{font-family:var(--display);font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;color:var(--warmred-700);display:inline-flex;align-items:center;gap:.6em;}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;}
+.eyebrow.on-dark{color:#E6B892;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.section-pad{padding:clamp(64px,9vw,116px) 0;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--display);font-weight:800;font-size:1rem;background:var(--warmred-600);color:#fff;border:0;border-radius:13px;padding:16px 26px;text-decoration:none;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(181,52,27,.45);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;}
+.btn:hover{background:var(--warmred-700);transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(181,52,27,.5);}
+.btn .ar{transition:transform .18s ease;}
+.btn:hover .ar{transform:translateX(3px);}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);box-shadow:none;}
+.btn.ghost:hover{background:#fff;color:var(--forest-900);border-color:#fff;}
+
+/* Announcement bar */
+.topbar{background:var(--forest-900);color:#EAE3D4;text-align:center;font-size:.85rem;padding:9px 16px;}
+.topbar b{color:#fff;font-family:var(--display);font-weight:700;}
+.topbar .tug{color:#E6B892;font-family:var(--display);font-weight:800;letter-spacing:.04em;}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.86);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;gap:26px;padding:13px 24px;max-width:var(--maxw);margin:0 auto;}
+.brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none;}
+.brand img{height:23px;width:auto;}
+.nav-links{display:flex;gap:24px;margin-left:6px;}
+.nav-links a{font-size:.95rem;font-weight:600;color:var(--ink);text-decoration:none;opacity:.74;transition:opacity .15s;position:relative;}
+.nav-links a:hover{opacity:1;}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--warmred);transform:scaleX(0);transform-origin:left;transition:transform .2s;}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:14px;}
+.nav-meta{font-size:.82rem;color:var(--muted);font-weight:600;}
+.nav .btn{padding:11px 19px;font-size:.93rem;}
+
+/* HERO — real photo, scrim, overlaid capture */
+.hero{position:relative;min-height:clamp(560px,86vh,860px);display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('assets/photos/web/hero.jpg') 60% 26%/cover no-repeat;}
+.hero-scrim{position:absolute;inset:0;background:
+  linear-gradient(to top,rgba(11,15,12,.95) 0%,rgba(11,15,12,.78) 26%,rgba(11,15,12,.4) 52%,rgba(11,15,12,.2) 78%,rgba(11,15,12,.34) 100%),
+  linear-gradient(to right,rgba(11,15,12,.55) 0%,rgba(11,15,12,.12) 48%,rgba(11,15,12,0) 70%);}
+.hero-content{position:relative;z-index:2;width:100%;min-width:0;padding:0 0 clamp(40px,7vh,84px);}
+.hero h1,.hero .lead{overflow-wrap:break-word;}
+.hero-inner{max-width:660px;}
+.hero h1{color:#fff;}
+.hero h1 .em{font-style:italic;color:#E6B892;}
+.hero .lead{color:#EDE7DA;opacity:1;margin-top:20px;max-width:34em;text-shadow:0 1px 12px rgba(0,0,0,.4);}
+.hero .eyebrow{color:#E6B892;}
+.signup{display:flex;gap:10px;flex-wrap:wrap;max-width:500px;margin-top:26px;}
+.signup input[type=email]{flex:1 1 200px;min-width:0;font-family:var(--body);font-size:1rem;color:var(--ink);background:rgba(255,255,255,.96);border:1.5px solid transparent;border-radius:13px;padding:15px 18px;}
+.signup input[type=email]::placeholder{color:#6B7570;}
+.signup input[type=email]:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 4px rgba(255,255,255,.3);}
+.form-note{font-size:.86rem;margin:14px 0 0;}
+.hero .form-note{color:#D9D2C4;}
+.form-ok{color:#A7D0A0;font-weight:600;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:24px;}
+.hero-trust span{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:#F0EADd;}
+.hero-trust .dot{width:7px;height:7px;border-radius:50%;background:var(--warmred);}
+.video-slot{position:absolute;top:18px;right:18px;z-index:2;display:none;}
+
+/* Founder gap */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,68px);align-items:center;}
+.media-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:var(--forest-900);}
+.media-card img{width:100%;height:100%;object-fit:cover;}
+.gap-sec{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.gap-sec h2 .hl{color:var(--warmred-600);}
+.founder-note{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line-strong);font-size:.96rem;color:var(--muted);}
+.founder-note strong{color:var(--ink);}
+
+/* Value cards */
+.head-block{max-width:40rem;}
+.head-block.center{margin:0 auto;text-align:center;}
+.cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:46px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.card .ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:14px;background:var(--warmred-100);color:var(--warmred-600);}
+.card .ico svg{width:24px;height:24px;}
+.card .num{font-family:var(--display);font-weight:900;font-size:.9rem;color:var(--warmred-700);letter-spacing:.04em;}
+.card h3{margin:6px 0 9px;}
+.card p{margin:0;font-size:.98rem;}
+
+/* Carrier spotlight */
+.spotlight{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.05fr);gap:clamp(32px,5vw,66px);align-items:center;}
+.spot-media{aspect-ratio:4/5;}
+.feature-list{margin-top:24px;}
+.frow{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:16px 4px;border-top:1px solid var(--line);}
+.frow:last-child{border-bottom:1px solid var(--line);}
+.frow .mk{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:var(--forest);color:#fff;display:grid;place-items:center;margin-top:2px;}
+.frow .mk svg{width:16px;height:16px;}
+.frow b{font-family:var(--display);font-weight:700;font-size:1.05rem;display:block;margin-bottom:2px;letter-spacing:-.01em;}
+.frow span{font-size:.95rem;color:var(--muted);}
+
+/* Mid CTA */
+.midcta{background:var(--forest);color:#EFE9DC;}
+.midcta-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding:30px 0;}
+.midcta h3{color:#fff;font-size:clamp(1.2rem,2vw,1.6rem);max-width:22ch;line-height:1.12;}
+.midcta .signup{margin:0;flex:1;min-width:300px;justify-content:flex-end;max-width:none;}
+.midcta .form-note{flex-basis:100%;margin:8px 0 0;text-align:right;color:#CFC8B8;}
+.midcta .form-note:empty{display:none;}
+
+/* Emma */
+.both{background:var(--cream);}
+.both .split{align-items:stretch;}
+.both-text{align-self:center;}
+.both .quote{margin-top:22px;background:var(--sand-soft);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;}
+.both .quote p{font-family:var(--display);font-weight:700;font-style:italic;font-size:1.28rem;line-height:1.32;color:var(--ink);margin:0 0 10px;}
+.both .quote span{font-size:.92rem;color:var(--muted);font-weight:600;}
+
+/* Safety tiles */
+.safety{background:var(--forest-900);color:#E6DfD0;}
+.safety h2,.safety h3{color:#fff;}
+.safety .lead{color:#CFC8B7;opacity:1;}
+.tiles4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:46px;}
+.tile{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--r);padding:26px 24px;}
+.tile .ico{width:42px;height:42px;border-radius:12px;background:var(--warmred-600);color:#fff;display:grid;place-items:center;margin-bottom:16px;}
+.tile .ico svg{width:22px;height:22px;}
+.tile h3{font-size:1.06rem;margin-bottom:8px;}
+.tile p{font-size:.92rem;margin:0;color:#BDB6A6;}
+.safety .fineprint{margin-top:24px;font-size:.82rem;color:#9A9482;max-width:62rem;}
+
+/* Colourways */
+.ways{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:46px;}
+.way{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);background:#fff;}
+.way .ph{aspect-ratio:4/3;overflow:hidden;}
+.way .ph img{width:100%;height:100%;object-fit:cover;}
+.way .cap{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;}
+.way .cap b{font-family:var(--display);font-weight:800;font-size:1.1rem;}
+.way .cap .sw{width:26px;height:26px;border-radius:50%;border:2px solid var(--line-strong);}
+
+/* Timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:52px;position:relative;}
+.timeline::before{content:"";position:absolute;left:11%;right:11%;top:27px;height:2px;background:linear-gradient(90deg,var(--warmred),var(--forest));}
+.tstep{text-align:center;position:relative;z-index:1;}
+.tstep .dot{width:54px;height:54px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:1.15rem;background:#fff;border:2px solid var(--warmred);color:var(--warmred-700);box-shadow:0 6px 18px -8px rgba(232,71,42,.5);}
+.tstep.is-current .dot{background:var(--warmred-600);color:#fff;}
+.tstep h3{font-size:1rem;margin-bottom:6px;}
+.tstep p{font-size:.88rem;margin:0;}
+.tstep .tag{display:inline-block;margin-top:8px;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--warmred-700);}
+
+/* FAQ */
+.faq-sec{background:var(--sand);border-top:1px solid var(--line);}
+.faq-list{margin-top:40px;max-width:860px;}
+.faq{border-bottom:1px solid var(--line-strong);}
+.faq summary{list-style:none;cursor:pointer;padding:23px 4px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,1.6vw,1.26rem);letter-spacing:-.02em;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary .pm{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line-strong);display:grid;place-items:center;font-size:1.2rem;color:var(--warmred-600);transition:transform .2s,background .2s;}
+.faq[open] summary .pm{transform:rotate(45deg);background:var(--warmred-600);color:#fff;border-color:var(--warmred-600);}
+.faq .ans{padding:0 4px 24px;max-width:64ch;}
+.faq .ans p{margin:0;font-size:1rem;}
+
+/* Final */
+.final{position:relative;color:#fff;overflow:hidden;}
+.final-bg{position:absolute;inset:0;background:url('assets/photos/web/hero.jpg') 58% 28%/cover no-repeat;}
+.final-scrim{position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,27,21,.92) 30%,rgba(20,27,21,.62) 100%);}
+.final-inner{position:relative;z-index:2;max-width:640px;}
+.final h2{color:#fff;font-size:clamp(2.1rem,4.2vw,3.2rem);}
+.final h2 .em{font-style:italic;color:#E6B892;}
+.final p{color:#DAD3C4;}
+.final .scot{margin-top:22px;font-family:var(--display);font-weight:700;font-size:.84rem;letter-spacing:.05em;text-transform:uppercase;color:#B6AE9C;}
+
+/* Footer */
+footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,255,255,.08);}
+.foot-inner{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;padding:40px 24px;max-width:var(--maxw);margin:0 auto;}
+.foot-brand img{height:22px;filter:brightness(0) invert(1);opacity:.92;}
+.foot-brand .tag{font-size:.8rem;color:#8A938A;margin-top:10px;font-weight:600;}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:.86rem;}
+.foot-links a{color:#B6BEB5;text-decoration:none;opacity:.85;}
+.foot-links a:hover{opacity:1;color:#fff;}
+.foot-legal{border-top:1px solid rgba(255,255,255,.08);padding:18px 24px;max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:.76rem;color:#929B91;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);}
+.reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+
+@media(max-width:900px){
+  .nav-links,.nav-meta{display:none;}
+  .split,.spotlight,.cards-3,.tiles4,.ways{grid-template-columns:1fr;}
+  .tiles4{grid-template-columns:1fr 1fr;}
+  .spot-media{aspect-ratio:4/3;max-width:560px;}
+  .gap-sec .media-card,.both .media-card{order:-1;}
+  .timeline{grid-template-columns:1fr 1fr;gap:30px 14px;}
+  .timeline::before{display:none;}
+  .midcta-inner{flex-direction:column;align-items:flex-start;}
+  .midcta .signup{justify-content:flex-start;}
+}
+@media(max-width:560px){
+  body{font-size:17px;}
+  .cards-3,.tiles4,.ways{grid-template-columns:1fr;}
+  .hero{min-height:74vh;}
+  .hero-bg{background-position:52% 20%;}
+  .hero h1{font-size:2.2rem;letter-spacing:-.03em;}
+  .signup{flex-direction:column;}
+  .signup input[type=email],.signup .btn{width:100%;}
+  .signup .btn{justify-content:center;}
+  .nav .btn{padding:10px 15px;font-size:.86rem;}
+  .midcta .signup{justify-content:flex-start;}
+}
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body id="top">
+
+<div class="topbar">The first carrier <b>engineered for dads</b> — not adapted, not adjusted. Reserve your place in the founding run. <span class="tug">#TUGETHER</span></div>
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="TUKO — home"><img src="Tuko_Wordmark.png" alt="TUKO"></a>
+    <div class="nav-links">
+      <a href="#why">Why TUKO</a>
+      <a href="#carrier">The Carrier</a>
+      <a href="#both">For both of you</a>
+      <a href="#safety">Safety</a>
+      <a href="#run">The Founding Run</a>
+    </div>
+    <div class="nav-cta">
+      <span class="nav-meta">Designed in Scotland</span>
+      <a class="btn" href="#reserve">Reserve my place</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO (real photography; a hero <video> can drop into .video-slot later) -->
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="A dad walks a Scottish forest path at golden hour with his baby in a TUKO front carrier, his partner beside him"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <div class="wrap hero-inner">
+        <span class="eyebrow reveal">#TUGETHER · The founding run</span>
+        <h1 class="reveal" style="margin-top:16px;">Finally, a carrier <span class="em">designed for your body.</span></h1>
+        <p class="lead reveal">The first baby carrier engineered for the male frame — a patent-pending hip belt built for the male pelvis, straps that sit where your shoulders actually are, one carrier from 4 to 36 months. We started with dads. That's the difference.</p>
+        <form class="signup reveal" id="form-hero" novalidate>
+          <label class="sr-only" for="email-hero">Email address</label>
+          <input type="email" id="email-hero" name="email" placeholder="Enter your email" required autocomplete="email">
+          <button class="btn" type="submit">Reserve my place <span class="ar">→</span></button>
+        </form>
+        <p class="form-note reveal" data-default aria-live="polite">Founding-run pricing, first access when we open, and a say in the build. No spam — just the build.</p>
+        <div class="hero-trust reveal">
+          <span><span class="dot"></span>Designed in Scotland</span>
+          <span><span class="dot"></span>One carrier · 4–36 months</span>
+          <span><span class="dot"></span>Built for both parents</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / FOUNDER GAP -->
+  <section class="gap-sec section-pad" id="why">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">The difference</span>
+        <h2 style="margin-top:16px;">Every carrier was built for <span class="hl">her</span> body. Then marketed to <span class="hl">you</span>.</h2>
+        <p class="lead" style="margin-top:16px;">Ben built TUKO because every carrier he tried hurt — straps that didn't fit, a hip belt that sat wrong, his back gone in half an hour. The "least worst" option was borrowed from his wife, reset every time he used it. So he carried less, and she carried more.</p>
+        <p>That's not a marketing problem. It's an engineering one. TUKO starts with male anatomy, male proportions, and how dads actually carry — every day, not for ten minutes in a product photo. <strong>Not adapted. Not adjusted. Designed.</strong></p>
+        <p class="founder-note"><strong>Ben Leonard</strong>, founder — built and sold Beast Gear, from £2,500 to a seven-figure exit. TUKO is what he's building next.</p>
+      </div>
+      <div class="media-card reveal" style="aspect-ratio:5/4;">
+        <img src="assets/photos/web/family.jpg" alt="A mum and dad pause with their baby — carried front-inward on dad's chest in the TUKO carrier — to look at a mossy branch in the Scottish woods" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="head-block reveal">
+        <span class="eyebrow">Why reserve now</span>
+        <h2 style="margin-top:16px;">The founding run is where the first carriers go.</h2>
+        <p class="lead" style="margin-top:14px;">We're building TUKO with a founding group before the public launch. Reserve your place and you're first — on price, on stock, and on the story.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
+          <div class="num">01</div>
+          <h3>Founding-run pricing</h3>
+          <p>The best price TUKO will ever carry, locked for the founding run — below the £220 RRP, before anyone else.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+          <div class="num">02</div>
+          <h3>First through the gate</h3>
+          <p>We're opening just 1,000 founding places. Reserve yours and you're first the moment we open — before the public launch.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/></svg></div>
+          <div class="num">03</div>
+          <h3>Inside the build</h3>
+          <p>Testing, fit, the patent, the field shoots in Scotland — you'll see how it's made, and help shape it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CARRIER -->
+  <section class="section-pad" id="carrier" style="background:var(--sand-soft);border-top:1px solid var(--line);">
+    <div class="wrap spotlight">
+      <div class="media-card spot-media reveal">
+        <img src="assets/photos/web/portrait.jpg" alt="A dad carries his baby front-inward against his chest in the charcoal TUKO carrier — the baby nestled and supported for the long carry" loading="lazy" style="object-position:38% center;">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">The carrier</span>
+        <h2 style="margin-top:16px;">Engineered around the dad, not adapted from the mum.</h2>
+        <p class="lead" style="margin-top:14px;">Every decision flows from the male frame and the long carry — the bits that actually break your back when a carrier was built for someone else.</p>
+        <div class="feature-list">
+          <div class="frow"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Patent-pending hip belt</b><span>Engineered for the male pelvis — where the weight should actually sit.</span></div></div>
+          <div class="frow"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>One-handed Fidlock® magnetic buckles</b><span>On in one move, baby in your other arm. No fumbling, no second pair of hands.</span></div></div>
+          <div class="frow"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Straps that fit a man's shoulders</b><span>Shaped to sit around male shoulder blades — they carry, they don't dig.</span></div></div>
+          <div class="frow"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>One carrier, 5.5–15 kg · 4–36 months</b><span>Full-day comfort across the whole carry window — front, hip and back.</span></div></div>
+          <div class="frow"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Breathable, ventilated back panel</b><span>Built for the long carry — hours on, glen to high street, without the sweat.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="midcta" id="reserve">
+    <div class="wrap midcta-inner">
+      <div>
+        <h3>One carrier, built for your body — from 4 to 36 months.</h3>
+        <p style="color:#CFC8B8;margin:8px 0 0;font-size:.92rem;">Founding-run pricing, first access, and a say in the build.</p>
+      </div>
+      <form class="signup" id="form-mid" novalidate>
+        <label class="sr-only" for="email-mid">Email address</label>
+        <input type="email" id="email-mid" name="email" placeholder="Enter your email" required autocomplete="email">
+        <button class="btn" type="submit">Reserve my place <span class="ar">→</span></button>
+      </form>
+      <p class="form-note" data-default aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- BUILT FOR BOTH (Emma) -->
+  <section class="both section-pad" id="both">
+    <div class="wrap split">
+      <div class="media-card reveal" style="aspect-ratio:4/3;">
+        <img src="assets/photos/web/family-wide.jpg" alt="A family together in the golden-hour woods, the baby carried front-inward on dad's chest" loading="lazy">
+      </div>
+      <div class="both-text reveal">
+        <span class="eyebrow">Built for both of you</span>
+        <h2 style="margin-top:16px;">Designed for dads. Trusted by both.</h2>
+        <p class="lead" style="margin-top:14px;">A baby carrier is a safety-critical bit of kit, and the call to use one is rarely made alone. TUKO is built to be the carrier she can hand over without a second thought — because it's visibly engineered for you, not a recolour of hers.</p>
+        <p>Shared load, shared adventure. When it fits the dad properly, nobody has to make the case for it.</p>
+        <div class="quote">
+          <p>"This one actually looks like it'd work for you."</p>
+          <span>— the sentence every TUKO is built to earn.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="safety section-pad" id="safety">
+    <div class="wrap">
+      <div class="head-block reveal">
+        <span class="eyebrow on-dark">Safety &amp; honesty</span>
+        <h2 style="margin-top:16px;">Quiet confidence, where it counts most.</h2>
+        <p class="lead" style="margin-top:14px;">This is the one product category where you don't get to overpromise. So we won't — here's exactly where we are.</p>
+      </div>
+      <div class="tiles4">
+        <div class="tile reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+          <h3>Built to standard</h3>
+          <p>Engineered to the European baby-carrier standard, CEN/TR&nbsp;16512:2015. We won't ship until it's met.</p>
+        </div>
+        <div class="tile reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"/></svg></div>
+          <h3>Scan before first use</h3>
+          <p>Every carrier ships with a two-minute setup step at tuko.world/how — <em>"you're not ready yet."</em> Non-negotiable.</p>
+        </div>
+        <div class="tile reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 0 9 9c4 0 6-3 6-6s-3-4-6-4-4-2-4-4 2-4 4-4"/><path d="M12 3a9 9 0 0 1 9 9"/></svg></div>
+          <h3>Honest about materials</h3>
+          <p>We'll publish the exact make-up when it's verified — real numbers, not rounded-up ones.</p>
+        </div>
+        <div class="tile reveal">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-4 9a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-9V3"/></svg></div>
+          <h3>Backed by science</h3>
+          <p>Developed with a PhD baby-carrying researcher — fit and safety tested for the long carry, not the photo.</p>
+        </div>
+      </div>
+      <p class="fineprint">Certification status and exact material figures are confirmed against TUKO's product spec before any public claim. We'd rather say "working toward" than dress up a number — the dads we build for spot the difference.</p>
+    </div>
+  </section>
+
+  <!-- COLOURWAYS -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="head-block center reveal">
+        <span class="eyebrow" style="justify-content:center;">Two colourways</span>
+        <h2 style="margin-top:16px;">Designed in two tones. Both unmistakably TUKO.</h2>
+      </div>
+      <!-- Packaging SKU codes are BLU + GRN; final swatch names TBC — captions kept descriptive on purpose. -->
+      <div class="ways">
+        <div class="way reveal">
+          <div class="ph"><img src="assets/photos/web/portrait.jpg" alt="The charcoal TUKO carrier worn by a dad in the forest" loading="lazy"></div>
+          <div class="cap"><b>The deep</b><span class="sw" style="background:#34373b;"></span></div>
+        </div>
+        <div class="way reveal">
+          <div class="ph"><img src="assets/photos/web/carrier-olive.jpg" alt="The olive-green TUKO carrier" loading="lazy"></div>
+          <div class="cap"><b>The green</b><span class="sw" style="background:#5b5f3a;"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDING RUN TIMELINE -->
+  <section class="section-pad" id="run" style="background:var(--sand-soft);border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="head-block center reveal">
+        <span class="eyebrow" style="justify-content:center;">The founding run</span>
+        <h2 style="margin-top:16px;">From the workshop to your shoulders.</h2>
+        <p class="lead" style="margin:14px auto 0;max-width:42rem;">A real product on a real timeline. Here's how TUKO gets from here to your first carry.</p>
+      </div>
+      <div class="timeline">
+        <div class="tstep is-current"><div class="dot">1</div><h3>Testing &amp; refinement</h3><p>Fit sessions, full-day wear, the patent. Getting it right before it's final.</p><span class="tag">We are here</span></div>
+        <div class="tstep"><div class="dot">2</div><h3>1,000 founding dads</h3><p>The founding run fills. This group sets the launch and gets first call.</p></div>
+        <div class="tstep"><div class="dot">3</div><h3>The launch opens</h3><p>Founding-run pricing goes live. Reserved places first, then everyone else.</p></div>
+        <div class="tstep"><div class="dot">4</div><h3>The first carries</h3><p>TUKO ships, and the first dads carry like it was built for them — because it was.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-sec section-pad">
+    <div class="wrap">
+      <div class="head-block reveal"><span class="eyebrow">Before you reserve</span><h2 style="margin-top:16px;">The straight answers.</h2></div>
+      <div class="faq-list">
+        <details class="faq" open><summary>£220 — is it actually worth it? <span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>One carrier, 4 to 36 months — instead of buying two or three as your baby grows. Set that against a course of physio for the back pain a badly-fitting carrier gives you, and the maths gets simple. Founding-run pricing is below the £220 RRP.</p></div></details>
+        <details class="faq"><summary>Will it actually fit me? <span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>That's the whole point. The patent-pending hip belt is engineered for the male pelvis, and the straps are shaped around male shoulders. We're testing on real dads now, across different builds — and founding dads see the results first. There'll be a proper sizing guide and a returns policy at launch. You've probably been burned before, so we'll show you the proof, not just claim it.</p></div></details>
+        <details class="faq"><summary>Is TUKO only for dads? <span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>It's designed for dads — that's where the engineering starts. But it's built for the whole family to share the carry. Most partners tell us the same thing: finally, a carrier that genuinely works for him. Everyone belongs, however your family is built.</p></div></details>
+        <details class="faq"><summary>When does it open? <span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>When the founding run is ready — we won't rush a safety-critical product to hit a date. Reserve your place and you'll be the first to know, with first access and founding-run pricing locked in before it's public.</p></div></details>
+        <details class="faq"><summary>Where is TUKO made? <span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>Designed in Scotland, built for the world. It works equally on a Highland trail and a Tuesday-morning walk to the shops — neither is more "TUKO" than the other. (Launching UK-first.)</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final section-pad" id="reserve-final">
+    <div class="final-bg" role="img" aria-label="A family together in the woods at golden hour"></div>
+    <div class="final-scrim"></div>
+    <div class="wrap final-inner">
+      <span class="eyebrow on-dark">Reserve your place</span>
+      <h2 style="margin-top:16px;">Be one of the first to carry <span class="em">like it was built for you.</span></h2>
+      <p class="lead" style="margin-top:16px;color:#DAD3C4;">Founding-run pricing, first access, and a front-row seat to the build. One email — that's all it takes to be first.</p>
+      <form class="signup" id="form-final" novalidate>
+        <label class="sr-only" for="email-final">Email address</label>
+        <input type="email" id="email-final" name="email" placeholder="Enter your email" required autocomplete="email">
+        <button class="btn" type="submit">Reserve my place <span class="ar">→</span></button>
+      </form>
+      <p class="form-note" data-default aria-live="polite" style="color:#CFC8B8;">No spam, no noise — just the build, and your place at the front of the queue.</p>
+      <div class="scot">#TUGETHER · Designed in Scotland · Built for the World</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><img src="Tuko_Wordmark.png" alt="TUKO"><div class="tag">Made for Dads. Built for Adventure.</div></div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#why">Why TUKO</a><a href="#carrier">The Carrier</a><a href="#both">For both of you</a><a href="#safety">Safety</a><a href="#run">The Founding Run</a><a href="#reserve">Reserve</a>
+    </nav>
+  </div>
+  <div class="foot-legal">
+    <span>© 2026 Tuko Baby Ltd · Dundee, Scotland · tuko.world — the first baby carrier engineered for dads.</span>
+    <span>Reserving your place signs you up for founding-run updates. Unsubscribe anytime.</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = [].slice.call(document.querySelectorAll('.reveal'));
+    if (rm || !('IntersectionObserver' in window)) { els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }); }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ if(e.closest('.hero')) { e.classList.add('in'); } else { io.observe(e); } });
+  })();
+  ['form-hero','form-mid','form-final'].forEach(function(id){
+    var f=document.getElementById(id); if(!f) return;
+    f.addEventListener('submit',function(ev){ ev.preventDefault();
+      var i=f.querySelector('input[type=email]'), n=f.querySelector('.form-note');
+      if(!i.value||!i.checkValidity()){ i.focus(); return; }
+      if(n) n.innerHTML='<span class="form-ok">You’re in — welcome to the founding run. Check your inbox.</span>';
+      i.value=''; i.blur();
+    });
+  });
+</script>
+</body>
+</html>
