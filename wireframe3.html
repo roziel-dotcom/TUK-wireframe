@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- ============ TUKO WIREFRAME 3 — BUILD v3.3 (FINAL: hero video + poster served via jsDelivr CDN — independent of Pages builds) ============ -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -42,8 +43,12 @@
   CARRIED-OVER ASSET / HONESTY NOTES (from wireframe 2 — still load-bearing):
   • PHOTOGRAPHY — real frames from the March-2026 "First Pass" shoot (Grant Anderson). Carry-facing QA holds:
     everything under a comfort/duration claim is FRONT-INWARD. Olive front-outward frame = colour swatch only.
-  • HERO FILM — does not exist yet. Poster shows until the <video> src lands (assembled from Ben Ads Clips /
-    the August shoot). The "Watch the film" chip is a wireframe placeholder and says so when clicked.
+  • HERO FILM — LIVE (placeholder edit): a 22.2s silent loop cut from Selects_01.mp4 (segments 16–22s /
+    42–48s / 92–98s / 112–118s, 0.6s crossfades — carry-led shots only; phone shot + car opener excluded).
+    Encoded 1920x1080 H.264 CRF29, muted, +faststart, 7.1 MB → tuko-hero-loop.mp4, with a
+    matching first-frame poster → tuko-hero-poster.jpg (also reused as the closing-section bg,
+    since assets/photos/web/hero.jpg is absent from the repo). Swap the <source> for the final 60s edit after
+    the August shoot; the "Watch the film" chip then plays the full film with sound.
   • FONTS — Archivo + Hanken Grotesk remain STAND-INS (brand fonts still TBC from Ben).
   • COLOUR — only Pantone Warm Red U hard-spec'd (≈#E8472A); the rest are screen approximations.
   • FORM — front-end demo. Wire to Klaviyo (founding-run list) + referral tool before traffic.
@@ -122,7 +127,7 @@ strong{color:var(--ink);}
 /* HERO — one statement, the film, one field (Ben #1, #5) */
 .hero{position:relative;min-height:clamp(600px,92vh,900px);display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;}
 .hero-media{position:absolute;inset:0;}
-.hero-media video{width:100%;height:100%;object-fit:cover;object-position:60% 26%;}
+.hero-media video{width:100%;height:100%;object-fit:cover;object-position:50% 30%;}
 .hero-scrim{position:absolute;inset:0;background:
   linear-gradient(to top,rgba(11,15,12,.95) 0%,rgba(11,15,12,.74) 24%,rgba(11,15,12,.34) 52%,rgba(11,15,12,.14) 78%,rgba(11,15,12,.3) 100%);}
 .hero-content{position:relative;z-index:2;width:100%;min-width:0;padding:0 0 clamp(44px,8vh,92px);}
@@ -236,7 +241,7 @@ strong{color:var(--ink);}
 
 /* Closing statement — no form, no button; the persistent nav button is the CTA (Ben #2) */
 .final{position:relative;color:#fff;overflow:hidden;}
-.final-bg{position:absolute;inset:0;background:url('assets/photos/web/hero.jpg') 58% 28%/cover no-repeat;}
+.final-bg{position:absolute;inset:0;background:url('https://cdn.jsdelivr.net/gh/roziel-dotcom/TUK-wireframe@main/tuko-hero-poster.jpg') 50% 30%/cover no-repeat;}
 .final-scrim{position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,27,21,.92) 30%,rgba(20,27,21,.62) 100%);}
 .final-inner{position:relative;z-index:2;max-width:680px;}
 .final h2{color:#fff;font-size:clamp(2.1rem,4.2vw,3.2rem);}
@@ -270,7 +275,7 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
   body{font-size:17px;}
   .ways{grid-template-columns:1fr;}
   .hero{min-height:82vh;}
-  .hero-media video{object-position:52% 20%;}
+  .hero-media video{object-position:50% 26%;}
   .hero h1{font-size:2.35rem;letter-spacing:-.03em;}
   .signup{flex-direction:column;}
   .signup input[type=email],.signup .btn{width:100%;}
@@ -314,16 +319,16 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
        Poster = real March-2026 frame, so the page ships lifestyle-led either way. -->
   <section class="hero">
     <div class="hero-media" aria-hidden="false">
-      <video autoplay muted loop playsinline poster="assets/photos/web/hero.jpg"
-             aria-label="A dad walks a Scottish forest path at golden hour with his baby in a TUKO front carrier, his partner beside him">
-        <!-- <source src="assets/video/tuko-story-60s.mp4" type="video/mp4"> -->
+      <video autoplay muted loop playsinline poster="https://cdn.jsdelivr.net/gh/roziel-dotcom/TUK-wireframe@main/tuko-hero-poster.jpg"
+             aria-label="A silent film loop: a dad carries his baby through Scottish woodland and coastline in the TUKO carrier">
+        <source src="https://cdn.jsdelivr.net/gh/roziel-dotcom/TUK-wireframe@main/tuko-hero-loop.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-scrim"></div>
     <button class="watch" id="watch" type="button" aria-describedby="watch-note">
       <span class="tri" aria-hidden="true"></span> Watch the film
     </button>
-    <p class="watch-note" id="watch-note" hidden>Wireframe note: the 60-second product film lands here after the August shoot. On the live page this plays the full film with sound.</p>
+    <p class="watch-note" id="watch-note" hidden>Wireframe note: this background is a 22-second silent loop cut from the selects reel. On the live page this button plays the full film with sound (final edit from the August shoot).</p>
     <div class="hero-content">
       <div class="wrap">
         <h1 class="reveal">Finally, a carrier <span class="em">designed for your body.</span></h1>
@@ -363,7 +368,7 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
         <p class="founder-note"><strong>Ben Leonard</strong>, founder — built and sold Beast Gear, from £2,500 to a seven-figure exit. TUKO is what he's building next.</p>
       </div>
       <div class="media-card reveal" style="aspect-ratio:5/4;">
-        <img src="assets/photos/web/family.jpg" alt="A mum and dad pause with their baby — carried front-inward on dad's chest in the TUKO carrier — to look at a mossy branch in the Scottish woods" loading="lazy">
+        <img src="https://roziel-dotcom.github.io/TUK-wireframe/assets/photos/web/family.jpg" alt="A mum and dad pause with their baby — carried front-inward on dad's chest in the TUKO carrier — to look at a mossy branch in the Scottish woods" loading="lazy">
       </div>
     </div>
   </section>
@@ -372,7 +377,7 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
   <section class="section-pad" id="carrier" style="background:var(--sand-soft);border-top:1px solid var(--line);">
     <div class="wrap spotlight">
       <div class="media-card spot-media reveal">
-        <img src="assets/photos/web/portrait.jpg" alt="A dad carries his baby front-inward against his chest in the charcoal TUKO carrier — the baby nestled and supported for the long carry" loading="lazy" style="object-position:38% center;">
+        <img src="https://roziel-dotcom.github.io/TUK-wireframe/assets/photos/web/portrait.jpg" alt="A dad carries his baby front-inward against his chest in the charcoal TUKO carrier — the baby nestled and supported for the long carry" loading="lazy" style="object-position:38% center;">
       </div>
       <div class="reveal">
         <span class="eyebrow">The carrier</span>
@@ -393,7 +398,7 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
   <section class="both section-pad" id="both">
     <div class="wrap split">
       <div class="media-card reveal" style="aspect-ratio:4/3;">
-        <img src="assets/photos/web/family-wide.jpg" alt="A family together in the golden-hour woods, the baby carried front-inward on dad's chest" loading="lazy">
+        <img src="https://roziel-dotcom.github.io/TUK-wireframe/assets/photos/web/family-wide.jpg" alt="A family together in the golden-hour woods, the baby carried front-inward on dad's chest" loading="lazy">
       </div>
       <div class="both-text reveal">
         <span class="eyebrow">Built for both of you</span>
@@ -453,11 +458,11 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
       <!-- Packaging SKU codes are BLU + GRN; final swatch names TBC — captions kept descriptive on purpose. -->
       <div class="ways">
         <div class="way reveal">
-          <div class="ph"><img src="assets/photos/web/portrait.jpg" alt="The charcoal TUKO carrier worn by a dad in the forest" loading="lazy"></div>
+          <div class="ph"><img src="https://roziel-dotcom.github.io/TUK-wireframe/assets/photos/web/portrait.jpg" alt="The charcoal TUKO carrier worn by a dad in the forest" loading="lazy"></div>
           <div class="cap"><b>The deep</b><span class="sw" style="background:#34373b;"></span></div>
         </div>
         <div class="way reveal">
-          <div class="ph"><img src="assets/photos/web/carrier-olive.jpg" alt="The olive-green TUKO carrier" loading="lazy"></div>
+          <div class="ph"><img src="https://roziel-dotcom.github.io/TUK-wireframe/assets/photos/web/carrier-olive.jpg" alt="The olive-green TUKO carrier" loading="lazy"></div>
           <div class="cap"><b>The green</b><span class="sw" style="background:#5b5f3a;"></span></div>
         </div>
       </div>
