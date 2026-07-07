@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- TUKO wireframe3 — MOBILE PREVIEW SHELL. Not a separate mobile build: wireframe3.html is one
+     responsive page; this shell just frames it at iPhone dimensions (390x844) for easy review.
+     Push to the repo root; view at /TUK-wireframe/mobile-preview.html -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>TUKO wireframe 3 — mobile preview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#161E18;font-family:system-ui,sans-serif;padding:28px 16px;box-sizing:border-box;}
+  .note{color:#A6AFA5;font-size:13px;text-align:center;max-width:420px;line-height:1.5;}
+  .note a{color:#E8472A;font-weight:600;}
+  .phone{width:390px;height:844px;max-height:calc(100vh - 120px);border:10px solid #0c110d;border-radius:44px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);background:#000;flex-shrink:0;}
+  .phone iframe{width:390px;height:100%;border:0;display:block;}
+  @media(max-width:430px){ .phone{width:100%;border-radius:28px;border-width:6px;} .phone iframe{width:100%;} }
+</style>
+</head>
+<body>
+  <div class="phone"><iframe src="https://roziel-dotcom.github.io/TUK-wireframe/wireframe3.html" title="TUKO wireframe 3 at mobile width"></iframe></div>
+  <p class="note">Same page, phone-width viewport (390&times;844). The wireframe is one responsive build, so what ships to mobile is exactly this. <a href="https://roziel-dotcom.github.io/TUK-wireframe/wireframe3.html" target="_blank" rel="noopener">Open full page&nbsp;&rarr;</a></p>
+</body>
+</html>
