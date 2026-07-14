@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- ============ TUKO WIREFRAME 3 — BUILD v3.5 (hotfix: v3.4 reveal specificity bug hid all animated content; hidden state now :not(.in) so reveal always wins) ============ -->
+<!-- ============ TUKO WIREFRAME 3 — BUILD v3.6 (mobile fix: stacked email/referral inputs kept row flex-basis, ballooning vertically and pushing the H1 into the nav; flex reset at <=560px) ============ -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -278,10 +278,11 @@ html.js .reveal:not(.in){opacity:0;transform:translateY(18px);}
   .hero-media video{object-position:50% 26%;}
   .hero h1{font-size:2.35rem;letter-spacing:-.03em;}
   .signup{flex-direction:column;}
-  .signup input[type=email],.signup .btn{width:100%;}
+  .signup input[type=email],.signup .btn{width:100%;flex:0 0 auto;}
   .signup .btn{justify-content:center;}
   .ref-row{flex-direction:column;}
-  .ref-row .btn{width:100%;justify-content:center;}
+  .ref-row input{flex:0 0 auto;}
+  .ref-row .btn{width:100%;justify-content:center;flex:0 0 auto;}
   .nav .btn{padding:10px 15px;font-size:.86rem;}
   .watch{top:14px;right:14px;padding:9px 14px;font-size:.8rem;}
   .watch-note{top:60px;right:14px;}
