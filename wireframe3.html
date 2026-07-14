@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- ============ TUKO WIREFRAME 3 — BUILD v3.4 (Ben round-2 fixes: overlap bug, reveal fail-safe, real photos in all slots, em dashes removed from copy) ============ -->
+<!-- ============ TUKO WIREFRAME 3 — BUILD v3.5 (hotfix: v3.4 reveal specificity bug hid all animated content; hidden state now :not(.in) so reveal always wins) ============ -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -260,7 +260,7 @@ footer{background:var(--forest-900);color:#A6AFA5;border-top:1px solid rgba(255,
 .foot-legal{border-top:1px solid rgba(255,255,255,.08);padding:18px 24px;max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:.76rem;color:#929B91;}
 
 /* Reveal */
-html.js .reveal{opacity:0;transform:translateY(18px);}
+html.js .reveal:not(.in){opacity:0;transform:translateY(18px);}
 .reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
 
 @media(max-width:900px){
