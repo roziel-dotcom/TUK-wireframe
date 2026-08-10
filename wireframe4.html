@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- ============ TUKO WIREFRAME 4 — BUILD v4.6 ============
+<!-- ============ TUKO WIREFRAME 4 — BUILD v4.9 ============
      Faithful recreation of the high-fidelity mockup in Ben's screencast (Screencast_2026-08-04).
      Copy taken verbatim from the screencast frames. Layout, nav pill, colourway dots, numbered
      accordion, bento founding cards, and the giant gradient TUKO footer all mirror the mockup.
@@ -33,7 +33,7 @@
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}.reveal{opacity:1!important;transform:none!important;}}
-body{margin:0;background:var(--frame);font-family:var(--f);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{margin:0;background:var(--frame);font-family:var(--f);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
 img{display:block;max-width:100%;}
 h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.04;letter-spacing:-.02em;}
 p{margin:0;}
@@ -45,10 +45,10 @@ a{color:inherit;}
 .page{max-width:var(--maxw);margin:0 auto;background:var(--page);overflow:hidden;min-height:100vh;}
 .frame-pad{padding:0;min-height:100vh;}
 
-.wrap{max-width:1040px;margin:0 auto;padding:0 40px;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 56px;}
 @media(max-width:640px){.wrap{padding:0 22px;}}
 .eyebrow{color:var(--accent);font-weight:600;font-size:.82rem;letter-spacing:.02em;margin:0 0 14px;}
-.section{padding:clamp(72px,10vw,128px) 0;}
+.section{padding:clamp(64px,8vw,104px) 0;}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--f);font-weight:600;font-size:.95rem;line-height:1;background:var(--accent);color:#fff;border:0;border-radius:var(--r-pill);padding:14px 24px;min-height:46px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .18s,transform .18s;}
@@ -82,7 +82,7 @@ a{color:inherit;}
 .hero-bottom .ship-line{margin:0 0 18px;line-height:1.5;}
 .hero-bottom .ship-line b{font-weight:600;font-size:1rem;color:#fff;}
 .hero-bottom .ship-line span{font-size:.92rem;color:rgba(255,255,255,.82);}
-.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;color:#fff;letter-spacing:-.03em;}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:700;color:#fff;letter-spacing:-.03em;}
 .hero .sub{margin-top:16px;font-size:clamp(1.02rem,1.6vw,1.2rem);color:rgba(255,255,255,.9);max-width:30ch;font-weight:400;}
 
 /* video card bottom-right */
@@ -104,7 +104,7 @@ a{color:inherit;}
 .model-badge{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:7px;background:var(--card-2);color:#fff;font-size:.74rem;font-weight:600;padding:7px 12px;border-radius:100px;}
 .model-badge .cube svg{width:15px;height:15px;display:block;}
 .model-hint{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:.8rem;color:var(--muted);letter-spacing:.01em;}
-.feat h2{font-size:clamp(2rem,3.4vw,3rem);}
+.feat h2{font-size:clamp(1.8rem,2.8vw,2.5rem);}
 .feat .flist{margin-top:36px;display:flex;flex-direction:column;gap:26px;}
 .frow{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;}
 .frow .ic{width:52px;height:52px;border-radius:50%;background:var(--card);display:grid;place-items:center;flex-shrink:0;}
@@ -120,7 +120,7 @@ a{color:inherit;}
 
 /* ---- THREE WAYS TO WEAR ---- */
 .ways-head{text-align:center;max-width:44rem;margin:0 auto;}
-.ways-head h2{font-size:clamp(2.2rem,4vw,3.4rem);}
+.ways-head h2{font-size:clamp(1.9rem,3vw,2.7rem);}
 .ways-head p{margin-top:16px;color:var(--muted);font-size:1.05rem;}
 .ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
 .way-card{background:var(--card);border-radius:var(--r-lg);padding:26px;min-height:440px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
@@ -141,7 +141,7 @@ a{color:inherit;}
 .acc-head::-webkit-details-marker{display:none;}
 .acc-num{width:26px;height:26px;border-radius:50%;background:var(--muted-2);color:#fff;font-size:.78rem;font-weight:600;display:grid;place-items:center;flex-shrink:0;}
 .acc-item[open] .acc-num{background:var(--ink);}
-.acc-title{font-size:1.4rem;font-weight:600;color:var(--muted-2);}
+.acc-title{font-size:1.2rem;font-weight:600;color:var(--muted-2);}
 .acc-item[open] .acc-title{color:var(--ink);}
 .acc-body{padding:14px 42px 4px 42px;color:var(--muted);font-size:.98rem;}
 .acc-item[open] .acc-body{border-bottom:2px solid var(--accent);padding-bottom:18px;}
@@ -154,7 +154,7 @@ a{color:inherit;}
 .road-media .prog i{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.4);}
 .road-media .prog i.on{background:#fff;}
 .road-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);margin-top:56px;align-items:start;}
-.road-grid h2{font-size:clamp(2rem,3.4vw,2.8rem);}
+.road-grid h2{font-size:clamp(1.7rem,2.6vw,2.3rem);}
 .road-grid .intro{margin-top:18px;color:var(--muted);}
 .timeline{position:relative;padding-left:38px;}
 .timeline::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--accent);}
@@ -169,7 +169,7 @@ a{color:inherit;}
 /* ---- BE PART OF THE JOURNEY (bento) ---- */
 .join{text-align:center;}
 .join .eyebrow{text-align:center;}
-.join h2{font-size:clamp(2.2rem,4vw,3.2rem);}
+.join h2{font-size:clamp(1.9rem,3vw,2.7rem);}
 .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;gap:20px;margin-top:56px;text-align:left;}
 .bento .cell{border-radius:var(--r-lg);overflow:hidden;position:relative;padding:28px;display:flex;flex-direction:column;}
 .bento .cell.grey{background:var(--card);justify-content:flex-end;}
@@ -196,7 +196,7 @@ a{color:inherit;}
 .faq-wrap{text-align:center;}
 .faq-list{margin-top:48px;text-align:left;max-width:820px;margin-left:auto;margin-right:auto;}
 .faq{border-bottom:1px solid var(--line);}
-.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:20px;padding:24px 4px;font-weight:600;font-size:1.15rem;}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:20px;padding:22px 4px;font-weight:600;font-size:1.05rem;}
 .faq summary::-webkit-details-marker{display:none;}
 .faq .qn{color:var(--muted-2);font-size:.8rem;font-weight:600;width:22px;flex-shrink:0;}
 .faq .plus{margin-left:auto;font-size:1.4rem;color:var(--ink);transition:transform .2s;}
@@ -207,9 +207,10 @@ a{color:inherit;}
 .closing{position:relative;border-radius:0;overflow:hidden;min-height:clamp(460px,72vh,640px);display:flex;align-items:center;color:#fff;}
 .closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;}
 .closing .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,46,42,.7) 0%,rgba(40,46,42,.3) 45%,transparent 70%);}
-.closing .in{position:relative;z-index:2;padding:0 clamp(28px,5vw,64px);}
-.closing h2{font-size:clamp(2.4rem,5vw,4rem);color:#fff;}
-.closing .btn{margin-top:26px;}
+.closing .in{position:relative;z-index:2;width:100%;max-width:1120px;margin:0 auto;padding:0 56px;display:flex;flex-direction:column;align-items:flex-start;}
+.closing h2{font-size:clamp(2.1rem,3.6vw,3.1rem);color:#fff;max-width:16ch;}
+.closing .btn{margin-top:24px;margin-left:0;align-self:flex-start;width:fit-content;flex:0 0 auto;}
+
 .closing .barline{position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--accent);z-index:3;}
 
 /* ---- ORANGE FOOTER ---- */
@@ -352,7 +353,7 @@ a{color:inherit;}
   <section class="section eng" id="engineered">
     <div class="wrap">
       <p class="eyebrow" style="text-align:center;">Designed to Protect</p>
-      <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);">Engineered for Parenthood</h2>
+      <h2 style="font-size:clamp(1.9rem,3vw,2.7rem);">Engineered for Parenthood</h2>
       <div class="split">
         <div class="eng-media reveal">
           <img src="https://cdn.jsdelivr.net/gh/roziel-dotcom/TUK-wireframe@main/photo-buckle.jpg" alt="Close-up of the TUKO carrier's hip belt and buckle being fastened">
@@ -413,7 +414,7 @@ a{color:inherit;}
   <section class="section faq-wrap" id="faq">
     <div class="wrap">
       <p class="eyebrow" style="text-align:center;">FAQ's</p>
-      <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);">The straight answers</h2>
+      <h2 style="font-size:clamp(1.9rem,3vw,2.7rem);">The straight answers</h2>
       <div class="faq-list">
         <details class="faq" open><summary><span class="qn">01</span> Who is TUKO for? <span class="plus" aria-hidden="true">+</span></summary><div class="fa">Dads first, that's where the engineering starts. But it's built for the whole family to share the carry, however your family is built.</div></details>
         <details class="faq"><summary><span class="qn">02</span> £220: is it actually worth it? <span class="plus" aria-hidden="true">+</span></summary><div class="fa">One carrier, 4 to 36 months, instead of buying two or three as your baby grows. Founding-run pricing is below the £220 RRP.</div></details>
